@@ -10,10 +10,10 @@
 
 #### Suits
 
-**DIAMONDS** - 1
-**HEARTS**   - 2
-**CLUBS**    - 3
-**SPADES**   - 4
+**DIAMONDS** - 1<br>
+**HEARTS**   - 2<br>
+**CLUBS**    - 3<br>
+**SPADES**   - 4<br>
 
 #### Powers
 
