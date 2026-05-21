@@ -10,20 +10,22 @@
 
 #### Suits
 
-**DIAMONDS** - 1<br>
-**HEARTS**   - 2<br>
-**CLUBS**    - 3<br>
-**SPADES**   - 4<br>
+DIAMONDS - 1<br>
+HEARTS   - 2<br>
+CLUBS    - 3<br>
+SPADES   - 4<br>
 
 #### Powers
 
-9 = 9
-10 = 10
-Jack = 11 (Not bower)
-Queen = 12
-King = 13
-Ace = 14
-Left bower = 15
-Right bower = 16
+9 = 9<br>
+10 = 10<br>
+Jack = 11 (Not bower)<br>
+Queen = 12<br>
+King = 13<br>
+Ace = 14<br>
+Left bower = 15<br>
+Right bower = 16<br>
+
+
 
 
