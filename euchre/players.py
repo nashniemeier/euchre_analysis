@@ -68,7 +68,9 @@ class RandomPlayer(BasePlayer):
 	
 	# End play_card()
 
-class RuleBasedPlayer(BasePlayer)
+class RuleBasedPlayer(BasePlayer):
+
+	
 
 # So much to figure out here, more to do :)
 
