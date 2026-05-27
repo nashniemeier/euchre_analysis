@@ -41,25 +41,26 @@ class Card:
 
 		self.suit = suit
 		self.rank = POWER[rank]
+		self.number = rank
 
 		# We do not use SUIT[suit] because that is how we get the color of a card
 	# End __init()
 
 def __repr__(self):
 
-	key = next((k for k, v in POWER.items() if v == self.rank), None)
+	print(f"Cards type = {self.number}")
 
 	match self.suit:
 		case 'Spades':
-			return f"{key}♠"
+			print(f"{self.number}♠")
 		case 'Clubs':
-			return f"{key}♣"
+			print(f"{self.number}♣")
 		case 'Hearts':
-			return f"{key}♡"
+			print(f"{self.number}♡")
 		case 'Diamonds':
-			return f"{key}♢"
+			print(f"{self.number}♢")
 		case _:
-			return "Unknown suit"
+			print("Unknown suit")
 	# End __repr()
 
 
