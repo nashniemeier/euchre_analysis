@@ -28,9 +28,24 @@ for player in player_list:
 
 	player.hand = game_deck.deal(5)
 
+	print(f"\n{player.name}'s hand :")
+	print("~~~~~~~~~~~~~")
+
+	hand_sum = 0
+	suit_list = []
+
 	for card in player.hand:
 
-		print(repr(card))
+		print(f"{card.number} of {card.suit}")
+		hand_sum += card.rank
+		if card.suit not in suit_list:
+			suit_list.append(card.suit)
+
+	print(suit_list)
+	
+	print(f"SUM = {hand_sum}")
+	print(f"{len(suit_list)} Suited")
+
 
 
 
