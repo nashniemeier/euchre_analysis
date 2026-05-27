@@ -45,18 +45,21 @@ class Card:
 		# We do not use SUIT[suit] because that is how we get the color of a card
 	# End __init()
 
-	def __repr__(self):
-		match self.suit:
-			case 'Spades':
-				return f"{self.rank}♠"
-			case 'Clubs':
-				return f"{self.rank}♣"
-			case 'Hearts':
-				return f"{self.rank}♡"
-			case 'Diamonds':
-				return f"{self.rank}♢"
-			case _:
-				return "Unknown suit"
+def __repr__(self):
+
+	key = next((k for k, v in POWER.items() if v == self.rank), None)
+
+	match self.suit:
+		case 'Spades':
+			return f"{key}♠"
+		case 'Clubs':
+			return f"{key}♣"
+		case 'Hearts':
+			return f"{key}♡"
+		case 'Diamonds':
+			return f"{key}♢"
+		case _:
+			return "Unknown suit"
 	# End __repr()
 
 
@@ -94,6 +97,11 @@ class Card:
 
 			return self.rank + 6 # 9: 1->7, 10: 2->8,..., A: 6->12 ✓
 
+		# Case of led_suit being none (used for deciding to call trump)
+
+		if led_suit == None:
+			return self.rank
+
 		# Check if a player is simply throwing off
 
 		if self.suit != led_suit:
@@ -118,8 +126,7 @@ class Card:
 
 	def beats(self, other_card, trump_suit, led_suit):
 
-		if self.get_power(self, trump_suit, led_suit) > 
-		   other_card.get_power(self, trump_suit, led_suit):
+		if self.get_power(self, trump_suit, led_suit) > other_card.get_power(self, trump_suit, led_suit):
 			return True
 		else:
 			return False

@@ -1,5 +1,5 @@
-import card
 import random
+from euchre import cards
 
 # This file details a few types of players and makes algorithms for them to play
 # at different levels. There will be a player that Randomly plays correct cards
@@ -70,7 +70,7 @@ class RandomPlayer(BasePlayer):
 
 class RuleBasedPlayer(BasePlayer):
 
-	
+	pass
 
 # So much to figure out here, more to do :)
 

@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 root_dir = Path(__file__).resolve().parent.parent
-sys.path.appd(str(root_dir))
+sys.path.append(str(root_dir))
 
 from euchre.cards import Card, Deck
 from euchre.players import BasePlayer
@@ -22,11 +22,20 @@ p_four = BasePlayer("p4")
 # We have a player list to go through
 
 player_list = [p_one, p_two, p_three, p_four]
+game_deck.shuffle()
 
 for player in player_list:
 
-	for i in range(5):
+	player.hand = game_deck.deal(5)
 
-		print(f"Card {i} for player {player.name}")
-		rank = input("Enter the rank: ")
-		suit = input("Enter the suit: ")
+	for card in player.hand:
+
+		print(repr(card))
+
+
+
+# Now the players hands are set, we should do calculations
+
+
+
+
