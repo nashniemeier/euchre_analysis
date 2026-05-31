@@ -24,6 +24,22 @@ p_four = BasePlayer("p4")
 player_list = [p_one, p_two, p_three, p_four]
 game_deck.shuffle()
 
+all_suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs']
+
+# To make this algorithm, we will use these weights (type double)
+
+trump_power_weight = 0.0
+num_aces_weight = 0.0
+num_suits_weight = 0.0
+
+print("=====================")
+print("= WELCOME TO EUCHRE =")
+print("=    PLAY / PASS    =")
+print("=    SIMULATION!    =")
+print("=====================")
+
+# Begin checking hands, for each player
+
 for player in player_list:
 
 	player.hand = game_deck.deal(5)
@@ -31,20 +47,46 @@ for player in player_list:
 	print(f"\n{player.name}'s hand :")
 	print("~~~~~~~~~~~~~")
 
-	hand_sum = 0
 	suit_list = []
 
-	for card in player.hand:
+	# Check the strength of the hand for each suit as trump
 
-		print(f"{card.number} of {card.suit}")
-		hand_sum += card.rank
-		if card.suit not in suit_list:
-			suit_list.append(card.suit)
+	keep_print = True
 
-	print(suit_list)
-	
-	print(f"SUM = {hand_sum}")
+	# For each suit to be trump
+
+	for trump_suit in all_suits:
+
+		num_aces = 0
+		trump_power_sum = 0
+		# Num Suits = len(suit_list)
+
+		# For each card in the hand
+
+		for card in player.hand:
+
+			#if keep_print == True:
+			#	print(f"{card.number} of {card.suit}")
+			if card.suit not in suit_list:
+				suit_list.append(card.suit)
+
+			if card.suit == trump_suit:
+				trump_power_sum += card.get_power(trump_suit, None)
+			if card.number == 'A':
+				print("ACE FOUND")
+				num_aces += 1
+
+		# keep_print = False
+
+		overall_weight = (
+			(trump_power_sum * trump_power_weight)
+			+ (num_aces * num_aces_weight)
+			- (len(suit_list) * num_suits_weight)
+		)
+
 	print(f"{len(suit_list)} Suited")
+
+
 
 
 
