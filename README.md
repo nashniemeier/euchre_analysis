@@ -50,12 +50,12 @@ To begin, BasePlayer has their hand and a name to keep track of the player
 <br>
 Then we split off into 3 types of players:<br>
 
-1. RandomPlayer
+1. RandomPlayer<br>
 	Pretty straight forward, this player plays a valid card at random. What
 	we can learn from this player is seeing the hands that are nearly impossible to lose,
 	or what hands the RandomPlayer gets lucky on.
 
-2. RuleBasedPlayer
+2. RuleBasedPlayer<br>
 	I designed algorithms to determine if a player should order up a card as trump or not.
 	To see all of my scratch work + ideas go into this, please refer to
 	rbp-alg.md THIS IS STILL BEING WORKED ON!

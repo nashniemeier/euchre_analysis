@@ -46,21 +46,21 @@ class Card:
 		# We do not use SUIT[suit] because that is how we get the color of a card
 	# End __init()
 
-def __repr__(self):
+	def __repr__(self):
 
-	print(f"Cards type = {self.number}")
+		print(f"Cards type = {self.number}")
 
-	match self.suit:
-		case 'Spades':
-			print(f"{self.number}♠")
-		case 'Clubs':
-			print(f"{self.number}♣")
-		case 'Hearts':
-			print(f"{self.number}♡")
-		case 'Diamonds':
-			print(f"{self.number}♢")
-		case _:
-			print("Unknown suit")
+		match self.suit:
+			case 'Spades':
+				print(f"{self.number}♠")
+			case 'Clubs':
+				print(f"{self.number}♣")
+			case 'Hearts':
+				print(f"{self.number}♡")
+			case 'Diamonds':
+				print(f"{self.number}♢")
+			case _:
+				print("Unknown suit")
 	# End __repr()
 
 
