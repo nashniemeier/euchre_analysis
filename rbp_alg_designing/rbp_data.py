@@ -92,7 +92,7 @@ for player in player_list:
 			if card.suit not in suit_list:
 				suit_list.append(card.suit)
 
-			if card.suit == trump_suit:
+			if card.get_suit(trump_suit) == trump_suit:
 				trump_power_sum += card.get_power(trump_suit, None)
 
 		keep_print = False

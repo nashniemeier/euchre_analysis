@@ -83,7 +83,8 @@ class Card:
 		# Take care of the jack case first
 		# If we have a jack and the colors match
 
-		if self.rank == 3 and SUIT[self.suit] == SUIT[trump_suit]:
+
+		if self.rank == 3 and self.get_suit(trump_suit) == trump_suit:
 
 			# Now split by what is right and left
 
