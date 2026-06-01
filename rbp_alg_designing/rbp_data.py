@@ -37,6 +37,10 @@ print("= WELCOME TO EUCHRE =")
 print("=    PLAY / PASS    =")
 print("=    SIMULATION!    =")
 print("=====================")
+print(f"= TPW: {trump_power_weight}          =")
+print(f"= NAW: {num_aces_weight}          =")
+print(f"= NSW: {num_suits_weight}          =")
+print("=====================")
 
 # Begin checking hands, for each player
 
@@ -65,18 +69,19 @@ for player in player_list:
 
 		for card in player.hand:
 
-			#if keep_print == True:
-			#	print(f"{card.number} of {card.suit}")
+			if keep_print == True:
+				print(f"{card.number} of {card.suit}")
 			if card.suit not in suit_list:
 				suit_list.append(card.suit)
 
 			if card.suit == trump_suit:
 				trump_power_sum += card.get_power(trump_suit, None)
 			if card.number == 'A':
-				print("ACE FOUND")
 				num_aces += 1
 
-		# keep_print = False
+		keep_print = False
+
+		print(f"For trump == {trump_suit}, TPS == {trump_power_sum}")
 
 		overall_weight = (
 			(trump_power_sum * trump_power_weight)
