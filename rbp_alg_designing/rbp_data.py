@@ -10,6 +10,17 @@ sys.path.append(str(root_dir))
 from euchre.cards import Card, Deck
 from euchre.players import BasePlayer
 
+import math
+
+
+# This function calculates the sigmoid function to get the probability
+# of calling trump, returning a double between 0 and 1
+
+def sigmoid(x):
+
+	return 1 / (1 + math.pow((math.e), (x * -1)))
+
+
 # Initialize the objects we will work with.
 
 game_deck = Deck()
@@ -52,6 +63,7 @@ for player in player_list:
 	print("~~~~~~~~~~~~~")
 
 	suit_list = []
+	num_aces = 0
 
 	# Check the strength of the hand for each suit as trump
 
@@ -61,7 +73,6 @@ for player in player_list:
 
 	for trump_suit in all_suits:
 
-		num_aces = 0
 		trump_power_sum = 0
 		# Num Suits = len(suit_list)
 
@@ -69,19 +80,22 @@ for player in player_list:
 
 		for card in player.hand:
 
+			# This if statement runs only once in the for loop
+
 			if keep_print == True:
 				print(f"{card.number} of {card.suit}")
+				if card.number == 'A':
+					num_aces += 1
+
+			# The next two if statements run each time
+
 			if card.suit not in suit_list:
 				suit_list.append(card.suit)
 
 			if card.suit == trump_suit:
 				trump_power_sum += card.get_power(trump_suit, None)
-			if card.number == 'A':
-				num_aces += 1
 
 		keep_print = False
-
-		print(f"For trump == {trump_suit}, TPS == {trump_power_sum}")
 
 		overall_weight = (
 			(trump_power_sum * trump_power_weight)
@@ -89,6 +103,9 @@ for player in player_list:
 			- (len(suit_list) * num_suits_weight)
 		)
 
+		print(f"For trump == {trump_suit}, TPS == {trump_power_sum} PRB == {sigmoid(overall_weight)}")
+
+	print(f"{player.name} has {num_aces} aces")
 	print(f"{len(suit_list)} Suited")
 
 

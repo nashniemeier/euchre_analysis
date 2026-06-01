@@ -38,4 +38,4 @@ The next step in figuring out this algorithm was to generate some numbers using 
 deck and 4 players, then dealt 5 cards to each player (Note I did not do the 2-3-2-3 3-2-3-2 deal, just 5 to each player).
 <br>
 I had hands randomly generated using the shuffle() method I designed in the Deck class. I would then print out the hands to see what hands I would call Trump on.
-For each player's hand, I would also print out how many unique suits they had, how many aces, and the sum of the strength of their trump.
+For each player's hand, I would also print out how many unique suits they had, how many aces, the sum of the strength of their trump,
