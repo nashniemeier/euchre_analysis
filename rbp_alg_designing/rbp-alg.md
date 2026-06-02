@@ -36,6 +36,17 @@ First, I dealt some Euchre hands to see a hand that I would call Trump on and I 
 
 The next step in figuring out this algorithm was to generate some numbers using what I observed from the real hands above. I first made a small engine that builds a
 deck and 4 players, then dealt 5 cards to each player (Note I did not do the 2-3-2-3 3-2-3-2 deal, just 5 to each player).
-<br>
+<br><br>
 I had hands randomly generated using the shuffle() method I designed in the Deck class. I would then print out the hands to see what hands I would call Trump on.
 For each player's hand, I would also print out how many unique suits they had, how many aces, and the sum of the strength of their trump.
+<br><br>
+I created a spreadsheet that tracked the Total Trump Power (TPS), Average Total Trump Power (AVGTP), TPS * AVGTP, TPS * AVGTP * AVGTP / 1000, Number of Aces, 
+my personal calling confidence, and Final Score ((TPS * AVGTP) + (TPS * AVGTP * AVGTP / 1000))
+<br><br>
+Here are some graphs that go with that data (based off 16 hands, for each trump out of 4 suits, 64 data points)
+
+![Graph of confidence of a Euchre Hand vs. TPS * TPAVG](https://docs.google.com/spreadsheets/d/e/2PACX-1vREVjvAyvumOnqigWEj9qFK4UlV9yPDguN_08UVGvZxEtRZTNil4QGVemd-VLnI11KKjPEM0tTjCP69/pubchart?oid=1274441869&format=image)
+
+![Graph of confidence of a Euchre Hand vs. TPS * TPAVG * TPAVG / 1000](https://docs.google.com/spreadsheets/d/e/2PACX-1vREVjvAyvumOnqigWEj9qFK4UlV9yPDguN_08UVGvZxEtRZTNil4QGVemd-VLnI11KKjPEM0tTjCP69/pubchart?oid=1534187539&format=image)
+
+![Graph of confidence of a Euchre Hand vs. Final Score](https://docs.google.com/spreadsheets/d/e/2PACX-1vREVjvAyvumOnqigWEj9qFK4UlV9yPDguN_08UVGvZxEtRZTNil4QGVemd-VLnI11KKjPEM0tTjCP69/pubchart?oid=654096712&format=image)
