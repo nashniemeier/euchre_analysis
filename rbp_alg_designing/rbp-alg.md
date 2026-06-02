@@ -12,11 +12,11 @@ First, I dealt some Euchre hands to see a hand that I would call Trump on and I 
 	I noticed that there were times where I would have 2-3 trump cards, but they were not the strongest cards. For example, one of my hands I had the 9, Q, A of
 	diamonds, then two other Queens. I noticed that this is not a hand that I would pick up because the trump is too weak and I do not have any aces to fall back
 	on. With this, I realize the importance of having the right or left. 
-<br>
+
 	However, there would be hands (very rarely) where there are four trump cards. Now thinking about this, the worst case scenario is you'd have the 9, 10, Q, K
 	of trump, and then that leaves the top 3 still out there (A, L, R). Now it would be extremely rare for a one player to have the top 3 and another player have
 	the bottom 4 of trump, so it would be a great idea to call trump with 4 or more.
-<br>
+
 	Bottom line, having 3 or more trump is very dependent on the strength of the cards, but having 4 or more trump is almost an instant call no matter the strength
 
 2. **Aces are Important**<br>
